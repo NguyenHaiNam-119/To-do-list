@@ -1,14 +1,14 @@
-// Thêm task mới
 function addTask(task) {
   const todoList = document.getElementById("todo-list");
   const li = document.createElement("li");
+  li.className = "task-item";
 
   li.innerHTML = `
-    <label>
+    <label class="task-label">
       <input type="checkbox" />
-      <span>${task}</span>
+      <span class="task-text">${task}</span>
     </label>
-    <div class="actions">
+    <div class="task-actions">
       <button class="delete-btn">Delete</button>
       <button class="edit-btn">Edit</button>
     </div>
@@ -23,7 +23,6 @@ function addTask(task) {
   });
 }
 
-// Xử lý submit form
 document.getElementById("todo-form").addEventListener("submit", function (event) {
   event.preventDefault();
   const taskInput = document.getElementById("todo-input");
@@ -34,24 +33,18 @@ document.getElementById("todo-form").addEventListener("submit", function (event)
   }
 });
 
-// Xử lý nút delete
 document.getElementById("todo-list").addEventListener("click", function (event) {
   if (event.target.classList.contains("delete-btn")) {
     event.target.closest("li").remove();
   }
 });
 
-// Xử lý nút edit
 document.getElementById("todo-list").addEventListener("click", function (event) {
   if (event.target.classList.contains("edit-btn")) {
-    const taskText = event.target.closest("li").querySelector("span");
+    const taskText = event.target.closest("li").querySelector(".task-text");
     const newText = prompt("Enter new task", taskText.textContent);
     if (newText !== null) {
       taskText.textContent = newText.trim();
     }
   }
 });
-
-// Task mẫu
-const defaultTasks = ["HTML", "CSS", "JavaScript", "Tailwind"];
-defaultTasks.forEach(task => addTask(task));
