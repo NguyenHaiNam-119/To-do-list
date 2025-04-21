@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom right, #cce5ff, #e0d7ff);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container {
+    max-width: 500px;
+    width: 90%;
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #4a3aff;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .todo-box {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  #todo-input {
+    flex: 1;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+    transition: border 0.2s;
+  }
+  
+  #todo-input:focus {
+    border-color: #7c3aed;
+  }
+  
+  button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #6c63ff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #4a3aff;
+    transform: scale(1.05);
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  
+  li label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+  }
+  
+  li input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+  }
+  
+  li .completed {
+    text-decoration: line-through;
+    color: #888;
+  }
+  
+  .actions {
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  li:hover .actions {
+    opacity: 1;
+  }
+  
+  .actions button {
+    margin-left: 10px;
+    background: none;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  
+  .actions .delete-btn {
+    color: #e74c3c;
+  }
+  
+  .actions .delete-btn:hover {
+    color: #c0392b;
+  }
+  
+  .actions .edit-btn {
+    color: #3498db;
+  }
+  
+  .actions .edit-btn:hover {
+    color: #2c80b4;
+  }
+  
